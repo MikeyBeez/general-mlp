@@ -1,0 +1,57 @@
+{"event": "setup", "teacher_params": 4826880, "mixer_params_each": 16909056, "attn_params_each": 263168, "w_gram": 1.0, "w_cross": 1.0, "groups": 1, "elapsed_s": 3.7}
+{"event": "fit", "step": 100, "mse": 0.04463, "gram": 0.03335, "cross": 0.00624, "elapsed_s": 11.7}
+{"event": "fit", "step": 200, "mse": 0.03917, "gram": 0.02365, "cross": 0.00433, "elapsed_s": 18.5}
+{"event": "fit", "step": 300, "mse": 0.03303, "gram": 0.02014, "cross": 0.00317, "elapsed_s": 25.3}
+{"event": "fit", "step": 400, "mse": 0.02723, "gram": 0.01637, "cross": 0.00247, "elapsed_s": 32.1}
+{"event": "fit", "step": 500, "mse": 0.02374, "gram": 0.0142, "cross": 0.00214, "elapsed_s": 38.9}
+{"event": "layer_metrics", "step": 500, "layers": [{"mse": 0.004, "r2": 0.8723, "cos": 0.9346}, {"mse": 0.0103, "r2": 0.3896, "cos": 0.5898}, {"mse": 0.0176, "r2": 0.4293, "cos": 0.6495}, {"mse": 0.0308, "r2": 0.4086, "cos": 0.629}, {"mse": 0.0372, "r2": 0.431, "cos": 0.6484}, {"mse": 0.0466, "r2": 0.3449, "cos": 0.604}], "elapsed_s": 39.3}
+{"event": "fit", "step": 600, "mse": 0.02381, "gram": 0.01436, "cross": 0.00213, "elapsed_s": 46.0}
+{"event": "fit", "step": 700, "mse": 0.02068, "gram": 0.01266, "cross": 0.00189, "elapsed_s": 52.8}
+{"event": "fit", "step": 800, "mse": 0.02006, "gram": 0.01202, "cross": 0.0018, "elapsed_s": 59.6}
+{"event": "fit", "step": 900, "mse": 0.01901, "gram": 0.01159, "cross": 0.00172, "elapsed_s": 66.4}
+{"event": "fit", "step": 1000, "mse": 0.01791, "gram": 0.01087, "cross": 0.00164, "elapsed_s": 73.2}
+{"event": "layer_metrics", "step": 1000, "layers": [{"mse": 0.0029, "r2": 0.9082, "cos": 0.9535}, {"mse": 0.007, "r2": 0.5822, "cos": 0.7476}, {"mse": 0.0112, "r2": 0.6393, "cos": 0.7997}, {"mse": 0.0223, "r2": 0.5706, "cos": 0.751}, {"mse": 0.0304, "r2": 0.5358, "cos": 0.7281}, {"mse": 0.04, "r2": 0.4385, "cos": 0.6755}], "elapsed_s": 73.6}
+{"event": "fit", "step": 1100, "mse": 0.01932, "gram": 0.01134, "cross": 0.00166, "elapsed_s": 80.3}
+{"event": "fit", "step": 1200, "mse": 0.01715, "gram": 0.01045, "cross": 0.00154, "elapsed_s": 87.1}
+{"event": "fit", "step": 1300, "mse": 0.01756, "gram": 0.01039, "cross": 0.00156, "elapsed_s": 93.9}
+{"event": "fit", "step": 1400, "mse": 0.01677, "gram": 0.00999, "cross": 0.00148, "elapsed_s": 100.7}
+{"event": "fit", "step": 1500, "mse": 0.01675, "gram": 0.00997, "cross": 0.00146, "elapsed_s": 107.5}
+{"event": "layer_metrics", "step": 1500, "layers": [{"mse": 0.0023, "r2": 0.9253, "cos": 0.9622}, {"mse": 0.0049, "r2": 0.7072, "cos": 0.8347}, {"mse": 0.0092, "r2": 0.7012, "cos": 0.8376}, {"mse": 0.0201, "r2": 0.6126, "cos": 0.7781}, {"mse": 0.0277, "r2": 0.576, "cos": 0.756}, {"mse": 0.037, "r2": 0.4807, "cos": 0.7035}], "elapsed_s": 107.9}
+{"event": "fit", "step": 1600, "mse": 0.01616, "gram": 0.00959, "cross": 0.0014, "elapsed_s": 114.6}
+{"event": "fit", "step": 1700, "mse": 0.01548, "gram": 0.0095, "cross": 0.00136, "elapsed_s": 121.4}
+{"event": "fit", "step": 1800, "mse": 0.01502, "gram": 0.00924, "cross": 0.00136, "elapsed_s": 128.2}
+{"event": "fit", "step": 1900, "mse": 0.01569, "gram": 0.00918, "cross": 0.00136, "elapsed_s": 135.0}
+{"event": "fit", "step": 2000, "mse": 0.01489, "gram": 0.00886, "cross": 0.0013, "elapsed_s": 141.8}
+{"event": "layer_metrics", "step": 2000, "layers": [{"mse": 0.0018, "r2": 0.9417, "cos": 0.9705}, {"mse": 0.0039, "r2": 0.765, "cos": 0.8703}, {"mse": 0.0081, "r2": 0.7388, "cos": 0.8598}, {"mse": 0.0185, "r2": 0.6451, "cos": 0.7989}, {"mse": 0.0264, "r2": 0.5955, "cos": 0.7682}, {"mse": 0.0345, "r2": 0.5157, "cos": 0.7264}], "elapsed_s": 142.2}
+{"event": "fit", "step": 2100, "mse": 0.01432, "gram": 0.00862, "cross": 0.00125, "elapsed_s": 148.9}
+{"event": "fit", "step": 2200, "mse": 0.01432, "gram": 0.00864, "cross": 0.00125, "elapsed_s": 155.7}
+{"event": "fit", "step": 2300, "mse": 0.01434, "gram": 0.00882, "cross": 0.00125, "elapsed_s": 162.5}
+{"event": "fit", "step": 2400, "mse": 0.0145, "gram": 0.00855, "cross": 0.00125, "elapsed_s": 169.3}
+{"event": "fit", "step": 2500, "mse": 0.01424, "gram": 0.00837, "cross": 0.00121, "elapsed_s": 176.2}
+{"event": "layer_metrics", "step": 2500, "layers": [{"mse": 0.0016, "r2": 0.9499, "cos": 0.9747}, {"mse": 0.0034, "r2": 0.7953, "cos": 0.8881}, {"mse": 0.0074, "r2": 0.7603, "cos": 0.8725}, {"mse": 0.0174, "r2": 0.6647, "cos": 0.8106}, {"mse": 0.0251, "r2": 0.6157, "cos": 0.7812}, {"mse": 0.0329, "r2": 0.5373, "cos": 0.7408}], "elapsed_s": 176.5}
+{"event": "fit", "step": 2600, "mse": 0.01402, "gram": 0.00829, "cross": 0.00119, "elapsed_s": 183.3}
+{"event": "fit", "step": 2700, "mse": 0.01395, "gram": 0.0081, "cross": 0.00117, "elapsed_s": 190.0}
+{"event": "fit", "step": 2800, "mse": 0.01425, "gram": 0.00832, "cross": 0.00121, "elapsed_s": 196.8}
+{"event": "fit", "step": 2900, "mse": 0.01394, "gram": 0.00821, "cross": 0.00119, "elapsed_s": 203.6}
+{"event": "fit", "step": 3000, "mse": 0.01341, "gram": 0.00791, "cross": 0.00114, "elapsed_s": 210.4}
+{"event": "layer_metrics", "step": 3000, "layers": [{"mse": 0.0015, "r2": 0.9535, "cos": 0.9765}, {"mse": 0.0031, "r2": 0.8172, "cos": 0.9011}, {"mse": 0.007, "r2": 0.7737, "cos": 0.8801}, {"mse": 0.0168, "r2": 0.6775, "cos": 0.8183}, {"mse": 0.0244, "r2": 0.6268, "cos": 0.7878}, {"mse": 0.0319, "r2": 0.552, "cos": 0.7498}], "elapsed_s": 210.8}
+{"event": "fit", "step": 3100, "mse": 0.01343, "gram": 0.00791, "cross": 0.00116, "elapsed_s": 217.5}
+{"event": "fit", "step": 3200, "mse": 0.01331, "gram": 0.008, "cross": 0.00116, "elapsed_s": 224.3}
+{"event": "fit", "step": 3300, "mse": 0.01345, "gram": 0.00795, "cross": 0.00113, "elapsed_s": 231.1}
+{"event": "fit", "step": 3400, "mse": 0.01366, "gram": 0.00789, "cross": 0.00117, "elapsed_s": 237.9}
+{"event": "fit", "step": 3500, "mse": 0.01371, "gram": 0.00779, "cross": 0.00113, "elapsed_s": 244.7}
+{"event": "layer_metrics", "step": 3500, "layers": [{"mse": 0.0014, "r2": 0.955, "cos": 0.9773}, {"mse": 0.0029, "r2": 0.8251, "cos": 0.9056}, {"mse": 0.0068, "r2": 0.7799, "cos": 0.8836}, {"mse": 0.0164, "r2": 0.6844, "cos": 0.8223}, {"mse": 0.0239, "r2": 0.6343, "cos": 0.7927}, {"mse": 0.0313, "r2": 0.5605, "cos": 0.7556}], "elapsed_s": 245.0}
+{"event": "fit", "step": 3600, "mse": 0.01325, "gram": 0.00793, "cross": 0.00113, "elapsed_s": 251.8}
+{"event": "fit", "step": 3700, "mse": 0.01307, "gram": 0.0076, "cross": 0.00111, "elapsed_s": 258.6}
+{"event": "fit", "step": 3800, "mse": 0.01325, "gram": 0.00772, "cross": 0.00112, "elapsed_s": 265.4}
+{"event": "fit", "step": 3900, "mse": 0.01335, "gram": 0.00776, "cross": 0.00113, "elapsed_s": 272.2}
+{"event": "fit", "step": 4000, "mse": 0.01352, "gram": 0.00791, "cross": 0.00115, "elapsed_s": 279.0}
+{"event": "layer_metrics", "step": 4000, "layers": [{"mse": 0.0014, "r2": 0.9553, "cos": 0.9775}, {"mse": 0.0029, "r2": 0.827, "cos": 0.9067}, {"mse": 0.0068, "r2": 0.7815, "cos": 0.8844}, {"mse": 0.0163, "r2": 0.686, "cos": 0.8233}, {"mse": 0.0238, "r2": 0.6357, "cos": 0.7936}, {"mse": 0.0311, "r2": 0.5628, "cos": 0.7569}], "elapsed_s": 279.3}
+{"event": "teacher_lm", "val_nats": 1.2742, "dickens_nats": 1.2666, "elapsed_s": 281.1}
+{"event": "swap_one", "layer": 0, "val_nats": 1.2743, "delta": 0.0002, "elapsed_s": 281.2}
+{"event": "swap_one", "layer": 1, "val_nats": 1.2754, "delta": 0.0013, "elapsed_s": 281.3}
+{"event": "swap_one", "layer": 2, "val_nats": 1.2774, "delta": 0.0032, "elapsed_s": 281.5}
+{"event": "swap_one", "layer": 3, "val_nats": 1.2836, "delta": 0.0095, "elapsed_s": 281.6}
+{"event": "swap_one", "layer": 4, "val_nats": 1.284, "delta": 0.0098, "elapsed_s": 281.7}
+{"event": "swap_one", "layer": 5, "val_nats": 1.2951, "delta": 0.0209, "elapsed_s": 281.9}
+{"event": "swap_all_untrained", "val_nats": 1.3755, "val_bpc": 1.9845, "dickens_nats": 1.3801, "dickens_bpc": 1.9911, "delta_val": 0.1014, "delta_dickens": 0.1135, "elapsed_s": 283.7}
