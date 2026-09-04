@@ -1,0 +1,152 @@
+{"event": "setup", "steps_per_layer": 10000, "groups": 8, "d_hidden": 512, "layers": 6, "teacher_val": 1.2742, "teacher_dickens": 1.2666, "elapsed_s": 3.6}
+{"event": "fit", "layer": 0, "step": 500, "mse": 0.001829, "elapsed_s": 10.0}
+{"event": "fit", "layer": 0, "step": 1000, "mse": 0.00085, "elapsed_s": 15.3}
+{"event": "fit", "layer": 0, "step": 1500, "mse": 0.000754, "elapsed_s": 20.6}
+{"event": "fit", "layer": 0, "step": 2000, "mse": 0.000568, "elapsed_s": 25.9}
+{"event": "fit", "layer": 0, "step": 2500, "mse": 0.000474, "elapsed_s": 31.2}
+{"event": "layer_metric", "layer": 0, "step": 2500, "mse": 0.0005, "r2": 0.9849, "cos": 0.9918, "elapsed_s": 31.4}
+{"event": "fit", "layer": 0, "step": 3000, "mse": 0.000425, "elapsed_s": 36.7}
+{"event": "fit", "layer": 0, "step": 3500, "mse": 0.000386, "elapsed_s": 42.0}
+{"event": "fit", "layer": 0, "step": 4000, "mse": 0.000379, "elapsed_s": 47.3}
+{"event": "fit", "layer": 0, "step": 4500, "mse": 0.00032, "elapsed_s": 52.7}
+{"event": "fit", "layer": 0, "step": 5000, "mse": 0.00036, "elapsed_s": 58.0}
+{"event": "layer_metric", "layer": 0, "step": 5000, "mse": 0.0003, "r2": 0.9902, "cos": 0.9946, "elapsed_s": 58.1}
+{"event": "fit", "layer": 0, "step": 5500, "mse": 0.000293, "elapsed_s": 63.4}
+{"event": "fit", "layer": 0, "step": 6000, "mse": 0.000304, "elapsed_s": 68.8}
+{"event": "fit", "layer": 0, "step": 6500, "mse": 0.000246, "elapsed_s": 74.1}
+{"event": "fit", "layer": 0, "step": 7000, "mse": 0.000266, "elapsed_s": 79.4}
+{"event": "fit", "layer": 0, "step": 7500, "mse": 0.000257, "elapsed_s": 84.8}
+{"event": "layer_metric", "layer": 0, "step": 7500, "mse": 0.0002, "r2": 0.9922, "cos": 0.9957, "elapsed_s": 84.9}
+{"event": "fit", "layer": 0, "step": 8000, "mse": 0.000237, "elapsed_s": 90.2}
+{"event": "fit", "layer": 0, "step": 8500, "mse": 0.000228, "elapsed_s": 95.5}
+{"event": "fit", "layer": 0, "step": 9000, "mse": 0.000235, "elapsed_s": 100.9}
+{"event": "fit", "layer": 0, "step": 9500, "mse": 0.000231, "elapsed_s": 106.2}
+{"event": "fit", "layer": 0, "step": 10000, "mse": 0.000229, "elapsed_s": 111.5}
+{"event": "layer_metric", "layer": 0, "step": 10000, "mse": 0.0002, "r2": 0.9927, "cos": 0.996, "elapsed_s": 111.6}
+{"event": "after_layer", "layer": 0, "swapped": 1, "val_nats": 1.2746, "delta_val": 0.0005, "mixers": ["AttentionMLP", "CausalSelfAttention", "CausalSelfAttention", "CausalSelfAttention", "CausalSelfAttention", "CausalSelfAttention"], "elapsed_s": 111.8}
+{"event": "fit", "layer": 1, "step": 500, "mse": 0.004585, "elapsed_s": 118.1}
+{"event": "fit", "layer": 1, "step": 1000, "mse": 0.002875, "elapsed_s": 124.3}
+{"event": "fit", "layer": 1, "step": 1500, "mse": 0.002502, "elapsed_s": 130.5}
+{"event": "fit", "layer": 1, "step": 2000, "mse": 0.002112, "elapsed_s": 136.7}
+{"event": "fit", "layer": 1, "step": 2500, "mse": 0.00205, "elapsed_s": 143.0}
+{"event": "layer_metric", "layer": 1, "step": 2500, "mse": 0.0021, "r2": 0.8755, "cos": 0.9327, "elapsed_s": 143.1}
+{"event": "fit", "layer": 1, "step": 3000, "mse": 0.001999, "elapsed_s": 149.3}
+{"event": "fit", "layer": 1, "step": 3500, "mse": 0.001816, "elapsed_s": 155.5}
+{"event": "fit", "layer": 1, "step": 4000, "mse": 0.001819, "elapsed_s": 161.7}
+{"event": "fit", "layer": 1, "step": 4500, "mse": 0.00169, "elapsed_s": 168.0}
+{"event": "fit", "layer": 1, "step": 5000, "mse": 0.001671, "elapsed_s": 174.2}
+{"event": "layer_metric", "layer": 1, "step": 5000, "mse": 0.0017, "r2": 0.8964, "cos": 0.9444, "elapsed_s": 174.3}
+{"event": "fit", "layer": 1, "step": 5500, "mse": 0.001617, "elapsed_s": 180.5}
+{"event": "fit", "layer": 1, "step": 6000, "mse": 0.001654, "elapsed_s": 186.8}
+{"event": "fit", "layer": 1, "step": 6500, "mse": 0.001622, "elapsed_s": 193.0}
+{"event": "fit", "layer": 1, "step": 7000, "mse": 0.00155, "elapsed_s": 199.2}
+{"event": "fit", "layer": 1, "step": 7500, "mse": 0.001567, "elapsed_s": 205.4}
+{"event": "layer_metric", "layer": 1, "step": 7500, "mse": 0.0016, "r2": 0.905, "cos": 0.9491, "elapsed_s": 205.5}
+{"event": "fit", "layer": 1, "step": 8000, "mse": 0.001548, "elapsed_s": 211.8}
+{"event": "fit", "layer": 1, "step": 8500, "mse": 0.001506, "elapsed_s": 218.0}
+{"event": "fit", "layer": 1, "step": 9000, "mse": 0.001459, "elapsed_s": 224.2}
+{"event": "fit", "layer": 1, "step": 9500, "mse": 0.001529, "elapsed_s": 230.4}
+{"event": "fit", "layer": 1, "step": 10000, "mse": 0.001508, "elapsed_s": 236.7}
+{"event": "layer_metric", "layer": 1, "step": 10000, "mse": 0.0015, "r2": 0.9081, "cos": 0.9507, "elapsed_s": 236.8}
+{"event": "after_layer", "layer": 1, "swapped": 2, "val_nats": 1.279, "delta_val": 0.0048, "mixers": ["AttentionMLP", "AttentionMLP", "CausalSelfAttention", "CausalSelfAttention", "CausalSelfAttention", "CausalSelfAttention"], "elapsed_s": 237.1}
+{"event": "fit", "layer": 2, "step": 500, "mse": 0.012097, "elapsed_s": 244.2}
+{"event": "fit", "layer": 2, "step": 1000, "mse": 0.008373, "elapsed_s": 251.3}
+{"event": "fit", "layer": 2, "step": 1500, "mse": 0.00733, "elapsed_s": 258.4}
+{"event": "fit", "layer": 2, "step": 2000, "mse": 0.006901, "elapsed_s": 265.6}
+{"event": "fit", "layer": 2, "step": 2500, "mse": 0.006691, "elapsed_s": 272.7}
+{"event": "layer_metric", "layer": 2, "step": 2500, "mse": 0.007, "r2": 0.7773, "cos": 0.8808, "elapsed_s": 272.8}
+{"event": "fit", "layer": 2, "step": 3000, "mse": 0.006855, "elapsed_s": 279.9}
+{"event": "fit", "layer": 2, "step": 3500, "mse": 0.006535, "elapsed_s": 287.0}
+{"event": "fit", "layer": 2, "step": 4000, "mse": 0.006167, "elapsed_s": 294.2}
+{"event": "fit", "layer": 2, "step": 4500, "mse": 0.00613, "elapsed_s": 301.3}
+{"event": "fit", "layer": 2, "step": 5000, "mse": 0.006322, "elapsed_s": 308.4}
+{"event": "layer_metric", "layer": 2, "step": 5000, "mse": 0.0063, "r2": 0.7993, "cos": 0.8931, "elapsed_s": 308.5}
+{"event": "fit", "layer": 2, "step": 5500, "mse": 0.006181, "elapsed_s": 315.6}
+{"event": "fit", "layer": 2, "step": 6000, "mse": 0.005959, "elapsed_s": 322.8}
+{"event": "fit", "layer": 2, "step": 6500, "mse": 0.005689, "elapsed_s": 329.9}
+{"event": "fit", "layer": 2, "step": 7000, "mse": 0.00593, "elapsed_s": 337.0}
+{"event": "fit", "layer": 2, "step": 7500, "mse": 0.005874, "elapsed_s": 344.1}
+{"event": "layer_metric", "layer": 2, "step": 7500, "mse": 0.006, "r2": 0.8095, "cos": 0.8987, "elapsed_s": 344.2}
+{"event": "fit", "layer": 2, "step": 8000, "mse": 0.005715, "elapsed_s": 351.4}
+{"event": "fit", "layer": 2, "step": 8500, "mse": 0.005597, "elapsed_s": 358.5}
+{"event": "fit", "layer": 2, "step": 9000, "mse": 0.005658, "elapsed_s": 365.6}
+{"event": "fit", "layer": 2, "step": 9500, "mse": 0.005527, "elapsed_s": 372.7}
+{"event": "fit", "layer": 2, "step": 10000, "mse": 0.005638, "elapsed_s": 379.8}
+{"event": "layer_metric", "layer": 2, "step": 10000, "mse": 0.0059, "r2": 0.8132, "cos": 0.9007, "elapsed_s": 380.0}
+{"event": "after_layer", "layer": 2, "swapped": 3, "val_nats": 1.2863, "delta_val": 0.0122, "mixers": ["AttentionMLP", "AttentionMLP", "AttentionMLP", "CausalSelfAttention", "CausalSelfAttention", "CausalSelfAttention"], "elapsed_s": 380.4}
+{"event": "fit", "layer": 3, "step": 500, "mse": 0.026434, "elapsed_s": 388.4}
+{"event": "fit", "layer": 3, "step": 1000, "mse": 0.020098, "elapsed_s": 396.4}
+{"event": "fit", "layer": 3, "step": 1500, "mse": 0.0191, "elapsed_s": 404.4}
+{"event": "fit", "layer": 3, "step": 2000, "mse": 0.017609, "elapsed_s": 412.4}
+{"event": "fit", "layer": 3, "step": 2500, "mse": 0.01704, "elapsed_s": 420.4}
+{"event": "layer_metric", "layer": 3, "step": 2500, "mse": 0.0175, "r2": 0.6637, "cos": 0.8059, "elapsed_s": 420.5}
+{"event": "fit", "layer": 3, "step": 3000, "mse": 0.01645, "elapsed_s": 428.5}
+{"event": "fit", "layer": 3, "step": 3500, "mse": 0.015976, "elapsed_s": 436.5}
+{"event": "fit", "layer": 3, "step": 4000, "mse": 0.015987, "elapsed_s": 444.5}
+{"event": "fit", "layer": 3, "step": 4500, "mse": 0.015764, "elapsed_s": 452.5}
+{"event": "fit", "layer": 3, "step": 5000, "mse": 0.015543, "elapsed_s": 460.5}
+{"event": "layer_metric", "layer": 3, "step": 5000, "mse": 0.0162, "r2": 0.6885, "cos": 0.8207, "elapsed_s": 460.7}
+{"event": "fit", "layer": 3, "step": 5500, "mse": 0.015449, "elapsed_s": 468.7}
+{"event": "fit", "layer": 3, "step": 6000, "mse": 0.015457, "elapsed_s": 476.7}
+{"event": "fit", "layer": 3, "step": 6500, "mse": 0.015065, "elapsed_s": 484.7}
+{"event": "fit", "layer": 3, "step": 7000, "mse": 0.014818, "elapsed_s": 492.7}
+{"event": "fit", "layer": 3, "step": 7500, "mse": 0.015049, "elapsed_s": 500.7}
+{"event": "layer_metric", "layer": 3, "step": 7500, "mse": 0.0155, "r2": 0.7014, "cos": 0.8281, "elapsed_s": 500.9}
+{"event": "fit", "layer": 3, "step": 8000, "mse": 0.014844, "elapsed_s": 508.9}
+{"event": "fit", "layer": 3, "step": 8500, "mse": 0.014818, "elapsed_s": 516.9}
+{"event": "fit", "layer": 3, "step": 9000, "mse": 0.01496, "elapsed_s": 524.9}
+{"event": "fit", "layer": 3, "step": 9500, "mse": 0.014873, "elapsed_s": 532.9}
+{"event": "fit", "layer": 3, "step": 10000, "mse": 0.015153, "elapsed_s": 540.9}
+{"event": "layer_metric", "layer": 3, "step": 10000, "mse": 0.0153, "r2": 0.7058, "cos": 0.8308, "elapsed_s": 541.0}
+{"event": "after_layer", "layer": 3, "swapped": 4, "val_nats": 1.3036, "delta_val": 0.0295, "mixers": ["AttentionMLP", "AttentionMLP", "AttentionMLP", "AttentionMLP", "CausalSelfAttention", "CausalSelfAttention"], "elapsed_s": 541.5}
+{"event": "fit", "layer": 4, "step": 500, "mse": 0.034719, "elapsed_s": 550.4}
+{"event": "fit", "layer": 4, "step": 1000, "mse": 0.029041, "elapsed_s": 559.3}
+{"event": "fit", "layer": 4, "step": 1500, "mse": 0.027355, "elapsed_s": 568.2}
+{"event": "fit", "layer": 4, "step": 2000, "mse": 0.026997, "elapsed_s": 577.1}
+{"event": "fit", "layer": 4, "step": 2500, "mse": 0.026264, "elapsed_s": 586.0}
+{"event": "layer_metric", "layer": 4, "step": 2500, "mse": 0.0268, "r2": 0.5899, "cos": 0.7651, "elapsed_s": 586.2}
+{"event": "fit", "layer": 4, "step": 3000, "mse": 0.027198, "elapsed_s": 595.1}
+{"event": "fit", "layer": 4, "step": 3500, "mse": 0.025213, "elapsed_s": 604.0}
+{"event": "fit", "layer": 4, "step": 4000, "mse": 0.025796, "elapsed_s": 612.9}
+{"event": "fit", "layer": 4, "step": 4500, "mse": 0.024675, "elapsed_s": 621.8}
+{"event": "fit", "layer": 4, "step": 5000, "mse": 0.024659, "elapsed_s": 630.7}
+{"event": "layer_metric", "layer": 4, "step": 5000, "mse": 0.0251, "r2": 0.6167, "cos": 0.7818, "elapsed_s": 630.9}
+{"event": "fit", "layer": 4, "step": 5500, "mse": 0.024444, "elapsed_s": 639.8}
+{"event": "fit", "layer": 4, "step": 6000, "mse": 0.024758, "elapsed_s": 648.7}
+{"event": "fit", "layer": 4, "step": 6500, "mse": 0.023614, "elapsed_s": 657.6}
+{"event": "fit", "layer": 4, "step": 7000, "mse": 0.024255, "elapsed_s": 666.5}
+{"event": "fit", "layer": 4, "step": 7500, "mse": 0.023973, "elapsed_s": 675.4}
+{"event": "layer_metric", "layer": 4, "step": 7500, "mse": 0.0242, "r2": 0.6305, "cos": 0.7903, "elapsed_s": 675.5}
+{"event": "fit", "layer": 4, "step": 8000, "mse": 0.024343, "elapsed_s": 684.4}
+{"event": "fit", "layer": 4, "step": 8500, "mse": 0.024159, "elapsed_s": 693.3}
+{"event": "fit", "layer": 4, "step": 9000, "mse": 0.023714, "elapsed_s": 702.2}
+{"event": "fit", "layer": 4, "step": 9500, "mse": 0.023689, "elapsed_s": 711.1}
+{"event": "fit", "layer": 4, "step": 10000, "mse": 0.02378, "elapsed_s": 720.0}
+{"event": "layer_metric", "layer": 4, "step": 10000, "mse": 0.0239, "r2": 0.6351, "cos": 0.7931, "elapsed_s": 720.2}
+{"event": "after_layer", "layer": 4, "swapped": 5, "val_nats": 1.3263, "delta_val": 0.0522, "mixers": ["AttentionMLP", "AttentionMLP", "AttentionMLP", "AttentionMLP", "AttentionMLP", "CausalSelfAttention"], "elapsed_s": 720.8}
+{"event": "fit", "layer": 5, "step": 500, "mse": 0.038708, "elapsed_s": 730.6}
+{"event": "fit", "layer": 5, "step": 1000, "mse": 0.036834, "elapsed_s": 740.4}
+{"event": "fit", "layer": 5, "step": 1500, "mse": 0.035003, "elapsed_s": 750.2}
+{"event": "fit", "layer": 5, "step": 2000, "mse": 0.032743, "elapsed_s": 759.9}
+{"event": "fit", "layer": 5, "step": 2500, "mse": 0.034898, "elapsed_s": 769.7}
+{"event": "layer_metric", "layer": 5, "step": 2500, "mse": 0.0342, "r2": 0.524, "cos": 0.7421, "elapsed_s": 769.9}
+{"event": "fit", "layer": 5, "step": 3000, "mse": 0.031975, "elapsed_s": 779.7}
+{"event": "fit", "layer": 5, "step": 3500, "mse": 0.030411, "elapsed_s": 789.5}
+{"event": "fit", "layer": 5, "step": 4000, "mse": 0.031173, "elapsed_s": 799.2}
+{"event": "fit", "layer": 5, "step": 4500, "mse": 0.031882, "elapsed_s": 809.0}
+{"event": "fit", "layer": 5, "step": 5000, "mse": 0.030637, "elapsed_s": 818.8}
+{"event": "layer_metric", "layer": 5, "step": 5000, "mse": 0.0328, "r2": 0.5433, "cos": 0.7561, "elapsed_s": 819.0}
+{"event": "fit", "layer": 5, "step": 5500, "mse": 0.029338, "elapsed_s": 828.8}
+{"event": "fit", "layer": 5, "step": 6000, "mse": 0.032157, "elapsed_s": 838.5}
+{"event": "fit", "layer": 5, "step": 6500, "mse": 0.027883, "elapsed_s": 848.3}
+{"event": "fit", "layer": 5, "step": 7000, "mse": 0.028454, "elapsed_s": 858.1}
+{"event": "fit", "layer": 5, "step": 7500, "mse": 0.029115, "elapsed_s": 867.9}
+{"event": "layer_metric", "layer": 5, "step": 7500, "mse": 0.0317, "r2": 0.559, "cos": 0.7644, "elapsed_s": 868.0}
+{"event": "fit", "layer": 5, "step": 8000, "mse": 0.028943, "elapsed_s": 877.8}
+{"event": "fit", "layer": 5, "step": 8500, "mse": 0.027457, "elapsed_s": 887.6}
+{"event": "fit", "layer": 5, "step": 9000, "mse": 0.028694, "elapsed_s": 897.4}
+{"event": "fit", "layer": 5, "step": 9500, "mse": 0.029314, "elapsed_s": 907.2}
+{"event": "fit", "layer": 5, "step": 10000, "mse": 0.030338, "elapsed_s": 916.9}
+{"event": "layer_metric", "layer": 5, "step": 10000, "mse": 0.0313, "r2": 0.5648, "cos": 0.7681, "elapsed_s": 917.1}
+{"event": "after_layer", "layer": 5, "swapped": 6, "val_nats": 1.3592, "delta_val": 0.085, "mixers": ["AttentionMLP", "AttentionMLP", "AttentionMLP", "AttentionMLP", "AttentionMLP", "AttentionMLP"], "elapsed_s": 917.8}
+{"event": "swap_all_untrained", "val_nats": 1.3592, "val_bpc": 1.9609, "dickens_nats": 1.3622, "dickens_bpc": 1.9652, "delta_val": 0.085, "delta_dickens": 0.0955, "elapsed_s": 919.3}

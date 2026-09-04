@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/mnt/data/Code/general-mlp/sweep_layers.py", line 120, in <module>
+    main()
+  File "/mnt/data/Code/general-mlp/sweep_layers.py", line 83, in main
+    p.add_argument("--w_dist", type=float, default=0.0)
+  File "/usr/lib/python3.12/argparse.py", line 1507, in add_argument
+    return self._add_action(action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/argparse.py", line 1889, in _add_action
+    self._optionals._add_action(action)
+  File "/usr/lib/python3.12/argparse.py", line 1709, in _add_action
+    action = super(_ArgumentGroup, self)._add_action(action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/argparse.py", line 1521, in _add_action
+    self._check_conflict(action)
+  File "/usr/lib/python3.12/argparse.py", line 1658, in _check_conflict
+    conflict_handler(action, confl_optionals)
+  File "/usr/lib/python3.12/argparse.py", line 1667, in _handle_conflict_error
+    raise ArgumentError(action, message % conflict_string)
+argparse.ArgumentError: argument --w_dist: conflicting option string: --w_dist

@@ -11,6 +11,8 @@ arm D: a BRAND NEW model (random embeddings, MLPs, head) whose mixers are the
 arm E: the same, but the frozen mixers are random. The control that says whether
        arm D's result comes from what the mixer learned or merely from having
        some fixed mixer in the slot.
+arm F: arm D's finished model, with the mixers UNLOCKED and everything trained
+       together. Does the borrowed part become the model's own?
 """
 
 import argparse
@@ -28,7 +30,8 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--teacher", default="teacher")
     p.add_argument("--mixers", default="fit_mse")
-    p.add_argument("--arm", choices=["A", "B", "C", "D", "E"], required=True)
+    p.add_argument("--arm", choices=["A", "B", "C", "D", "E", "F"], required=True)
+    p.add_argument("--init_run", default=None, help="arm F: run whose best.pt to unlock and keep training")
     p.add_argument("--run", default=None)
     p.add_argument("--steps", type=int, default=3000)
     p.add_argument("--batch", type=int, default=64)
@@ -61,7 +64,7 @@ def main():
             make_attention_mlp(model, i, groups=margs["groups"], d_hidden=margs["d_hidden"] or None)
             for i in range(len(model.blocks))
         ).to(device)
-        if args.arm in ("A", "D"):
+        if args.arm in ("A", "D", "F"):
             mixers.load_state_dict(mix_ckpt["state"])
         else:
             for m in mixers:
@@ -73,6 +76,11 @@ def main():
     model.drop.p = args.dropout
     for q in model.parameters():
         q.requires_grad_(True)
+    if args.arm == "F":
+        ckpt = torch.load(os.path.join(RUNS_DIR, args.init_run, "best.pt"), map_location=device)
+        model.load_state_dict(ckpt["state"])
+        log.log(event="unlocked_from", run=args.init_run, step=ckpt["step"],
+                dickens_nats=round(ckpt["dickens_nats"], 4))
     frozen = 0
     if args.arm in ("D", "E"):
         for block in model.blocks:

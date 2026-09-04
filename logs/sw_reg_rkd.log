@@ -1,0 +1,4 @@
+{"event": "grid", "attn_params_per_layer": 263168, "steps": 4000, "layers": "0,3,5", "groups": "8", "hidden": "512", "lrs": [0.001], "noise": [0.0], "w_gram": 0.0, "w_cross": 0.0, "w_dist": 1.0, "w_angle": 1.0, "elapsed_s": 3.1}
+{"event": "cell", "layer": 0, "groups": 8, "d_hidden": 512, "lr": 0.001, "noise": 0.0, "params": 4391936, "ratio_vs_attn": 16.69, "mse": 0.0005, "r2": 0.9846, "cos": 0.9914, "elapsed_s": 53.4}
+{"event": "cell", "layer": 3, "groups": 8, "d_hidden": 512, "lr": 0.001, "noise": 0.0, "params": 4391936, "ratio_vs_attn": 16.69, "mse": 0.0183, "r2": 0.648, "cos": 0.7961, "elapsed_s": 102.3}
+{"event": "cell", "layer": 5, "groups": 8, "d_hidden": 512, "lr": 0.001, "noise": 0.0, "params": 4391936, "ratio_vs_attn": 16.69, "mse": 0.0375, "r2": 0.4737, "cos": 0.6979, "elapsed_s": 151.2}

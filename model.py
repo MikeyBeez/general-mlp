@@ -41,6 +41,15 @@ class CausalSelfAttention(nn.Module):
         return self.proj(out), weights
 
 
+def causal_mean(x):
+    """Running mean of every position up to and including t. This is the
+    ENGRAM: one vector summarising everything seen so far. It costs O(1) per
+    token to maintain incrementally (a running sum and a count), so adding it
+    does NOT reintroduce a cache that grows with the conversation."""
+    return x.cumsum(dim=1) / torch.arange(1, x.size(1) + 1, device=x.device,
+                                          dtype=x.dtype).view(1, -1, 1)
+
+
 class AttentionMLP(nn.Module):
     """Causal context MLP that stands in for attention.
 
@@ -48,20 +57,45 @@ class AttentionMLP(nn.Module):
     weight (a Conv1d with kernel `window` is exactly that), passes the result
     through a nonlinearity and a linear layer, and gates it with the current
     token. `groups` > 1 restricts which channels may mix across positions.
+
+    With pool='concat' the engram - the causal mean of everything so far - is
+    CONCATENATED to the input; with pool='mul' it MULTIPLIES the input instead, so the block sees both the recent window, which
+    is position-structured but bounded, and an unbounded summary of the whole
+    history, which has no position structure. The conv alone can express only
+    the first.
     """
 
-    def __init__(self, d_model, window, d_hidden=None, groups=1):
+    def __init__(self, d_model, window, d_hidden=None, groups=1, pool="none", beta=1.0):
         super().__init__()
         d_hidden = d_hidden or d_model
         self.window = window
-        self.mix = nn.Conv1d(d_model, d_hidden, kernel_size=window, groups=groups)
+        self.pool = pool
+        self.beta = beta
+        d_in = d_model * 2 if pool == "concat" else d_model
+        self.mix = nn.Conv1d(d_in, d_hidden, kernel_size=window, groups=groups)
         self.out = nn.Linear(d_hidden, d_model)
-        self.gate = nn.Linear(d_model, d_model)
+        self.gate = nn.Linear(d_in, d_model)
+
+    def _with_engram(self, x):
+        if self.pool == "none":
+            return x
+        e = causal_mean(x)
+        if self.pool == "concat":
+            return torch.cat([x, e], dim=-1)
+        if self.pool == "mul":
+            # multiplicative: the engram modulates the input instead of sitting
+            # beside it. Same width, no extra parameters, but it puts a product
+            # of two computed quantities into the block - the one thing
+            # attention has that a stack of linear layers does not.
+            return x * (1.0 + e)
+        raise ValueError("unknown pool mode: " + self.pool)
 
     def forward(self, x, return_weights=False):
-        padded = F.pad(x.transpose(1, 2), (self.window - 1, 0))
+        z = self._with_engram(x)
+        padded = F.pad(z.transpose(1, 2), (self.window - 1, 0))
         h = F.gelu(self.mix(padded).transpose(1, 2))
-        return self.out(h) * torch.sigmoid(self.gate(x)), None
+        # beta sharpens the gate toward a hard switch; beta=1 is a plain sigmoid.
+        return self.out(h) * torch.sigmoid(self.beta * self.gate(z)), None
 
 
 class MLP(nn.Module):
@@ -143,6 +177,6 @@ class GPT(nn.Module):
         return tokens
 
 
-def make_attention_mlp(model, layer, groups=1, d_hidden=None):
+def make_attention_mlp(model, layer, groups=1, d_hidden=None, pool="none", beta=1.0):
     d_model = model.embed.weight.size(1)
-    return AttentionMLP(d_model, model.ctx, d_hidden=d_hidden, groups=groups)
+    return AttentionMLP(d_model, model.ctx, d_hidden=d_hidden, groups=groups, pool=pool, beta=beta)

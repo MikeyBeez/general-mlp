@@ -10,7 +10,8 @@ import torch
 from data import Corpus
 from model import GPT, make_attention_mlp
 from common import (RUNS_DIR, Logger, device_and_dtype, evaluate, bits_per_char,
-                    gram_loss, cross_gram_loss, r_squared, cosine)
+                    gram_loss, cross_gram_loss, rkd_distance_loss, rkd_angle_loss,
+                    readout_alignment_loss, residual_gram_loss, r_squared, cosine)
 
 
 def load_teacher(run, device):
@@ -49,6 +50,12 @@ def main():
     p.add_argument("--d_hidden", type=int, default=0)
     p.add_argument("--w_gram", type=float, default=0.0)
     p.add_argument("--w_cross", type=float, default=0.0)
+    p.add_argument("--w_dist", type=float, default=0.0)
+    p.add_argument("--w_angle", type=float, default=0.0)
+    p.add_argument("--w_readout", type=float, default=0.0)
+    p.add_argument("--w_resid", type=float, default=0.0)
+    p.add_argument("--pool", default="none", choices=["none", "concat", "mul"])
+    p.add_argument("--beta", type=float, default=1.0)
     p.add_argument("--eval_every", type=int, default=500)
     p.add_argument("--seed", type=int, default=0)
     args = p.parse_args()
@@ -64,7 +71,8 @@ def main():
     ctx = targs["ctx"]
 
     mixers = torch.nn.ModuleList(
-        make_attention_mlp(teacher, i, groups=args.groups, d_hidden=args.d_hidden or None)
+        make_attention_mlp(teacher, i, groups=args.groups, d_hidden=args.d_hidden or None,
+                           pool=args.pool, beta=args.beta)
         for i in range(len(teacher.blocks))
     ).to(device)
     for m in mixers:
@@ -72,7 +80,9 @@ def main():
     log.log(event="setup", teacher_params=sum(q.numel() for q in teacher.parameters()),
             mixer_params_each=sum(q.numel() for q in mixers[0].parameters()),
             attn_params_each=sum(q.numel() for q in teacher.blocks[0].mixer.parameters()),
-            w_gram=args.w_gram, w_cross=args.w_cross, groups=args.groups)
+            w_gram=args.w_gram, w_cross=args.w_cross, w_dist=args.w_dist,
+            w_angle=args.w_angle, w_readout=args.w_readout, w_resid=args.w_resid,
+            groups=args.groups, pool=args.pool, beta=args.beta)
 
     opt = torch.optim.AdamW(mixers.parameters(), lr=args.lr, weight_decay=0.01)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=args.lr, total_steps=args.steps, pct_start=0.1)
@@ -83,10 +93,12 @@ def main():
         with torch.no_grad(), torch.autocast(device_type=device.type, dtype=dtype, enabled=device.type == "cuda"):
             _, _, rec = teacher(x, collect=True)
         total = 0.0
-        parts = {"mse": 0.0, "gram": 0.0, "cross": 0.0}
+        parts = {"mse": 0.0, "gram": 0.0, "cross": 0.0, "dist": 0.0, "angle": 0.0,
+                 "readout": 0.0, "resid": 0.0}
         with torch.autocast(device_type=device.type, dtype=dtype, enabled=device.type == "cuda"):
             for i, m in enumerate(mixers):
                 x_in, tgt = rec[i]["x_in"].detach(), rec[i]["out"].detach()
+                attn = rec[i]["attn"]
                 pred, _ = m(x_in)
                 mse = (pred.float() - tgt.float()).pow(2).mean()
                 loss = mse
@@ -95,6 +107,16 @@ def main():
                     g = gram_loss(pred, tgt); loss = loss + args.w_gram * g; parts["gram"] += g.item()
                 if args.w_cross:
                     c = cross_gram_loss(pred, tgt, x_in); loss = loss + args.w_cross * c; parts["cross"] += c.item()
+                if args.w_dist:
+                    dd = rkd_distance_loss(pred, tgt); loss = loss + args.w_dist * dd; parts["dist"] += dd.item()
+                if args.w_angle:
+                    aa = rkd_angle_loss(pred, tgt); loss = loss + args.w_angle * aa; parts["angle"] += aa.item()
+                if args.w_readout and attn is not None:
+                    ro = readout_alignment_loss(pred, tgt, x_in, attn.detach())
+                    loss = loss + args.w_readout * ro; parts["readout"] += ro.item()
+                if args.w_resid:
+                    rg = residual_gram_loss(pred, tgt, x_in)
+                    loss = loss + args.w_resid * rg; parts["resid"] += rg.item()
                 total = total + loss
         opt.zero_grad(set_to_none=True)
         total.backward()
